@@ -1,1 +1,19 @@
-PROMPT='%{$fg_bold[green]%} %{$fg[cyan]%}%1~ % %{$reset_color%}'
+function git-branch-prompt {
+  local branch
+  branch=$(git symbolic-ref --short HEAD 2> /dev/null) \
+  || return 0
+  if [[ $branch ]]; then
+    echo " (%{$fg[red]%}$branch%{$fg_bold[blue]%})$(git-dirty-prompt)"
+  else
+    echo "$gs/%/%%"
+  fi
+}
+
+function git-dirty-prompt {
+  local dirty=$(git status --porcelain --untracked-files=no> /dev/null | tail -n 1)
+  if [[ -n $dirty ]]; then
+    echo " %{$fg[yellow]%}✗"
+  fi
+}
+
+PROMPT='%{$fg_bold[green]%} %{$fg[cyan]%}%1~%{$fg_bold[blue]%}$(git-branch-prompt) % %{$reset_color%}'
