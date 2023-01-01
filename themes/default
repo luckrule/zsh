@@ -1,0 +1,1 @@
+PROMPT='%{$fg_bold[green]%} %{$fg[cyan]%}%-1~ % %{$reset_color%}'

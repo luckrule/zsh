@@ -13,4 +13,6 @@ done
 
 if [[ -f $ZDOTDIR/themes/$THEME ]]; then
   source $ZDOTDIR/themes/$THEME
+else
+  source $ZDOTDIR/themes/default
 fi
