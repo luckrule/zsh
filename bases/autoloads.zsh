@@ -1,0 +1,2 @@
+autoloadAndRun colors
+autoloadAndRun compinit
