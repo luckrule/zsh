@@ -1,11 +1,7 @@
 function git-branch-prompt {
-  local branch
-  branch=$(git symbolic-ref --short HEAD 2> /dev/null) \
-  || return 0
-  if [[ $branch ]]; then
+  local branch=$(git symbolic-ref --short HEAD 2> /dev/null)
+  if [[ -n $branch ]]; then
     echo " (%{$fg[red]%}$branch%{$fg_bold[blue]%})$(git-dirty-prompt)"
-  else
-    echo "$gs/%/%%"
   fi
 }
 
