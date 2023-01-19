@@ -10,7 +10,6 @@ alias mv="mv -i"
 alias cp="cp -i"
 alias md="mkdir"
 alias rd="rmdir"
-alias zi="z -I ."
 alias ...='../..'
 alias ....='../../..'
 alias .....='../../../..'

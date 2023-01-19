@@ -1,3 +1,5 @@
+eval "$(zoxide init zsh)"
+
 for lib ($ZDOTDIR/libs/*.zsh); do
   source $lib
 done
