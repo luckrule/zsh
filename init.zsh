@@ -1,5 +1,3 @@
-eval "$(zoxide init zsh)"
-
 for base ($ZDOTDIR/bases/*.zsh); do
   source $base
 done
@@ -13,3 +11,5 @@ zinit light zsh-users/zsh-autosuggestions
 
 compinit
 zinit cdreplay -q
+
+eval "$(zoxide init zsh)"
