@@ -1,4 +1,4 @@
-autoload colors && colors
-autoload compinit && compinit
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
+autoload -Uz colors
+autoload -Uz compinit
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
